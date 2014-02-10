@@ -1,6 +1,4 @@
-prtDir = 'C:\Users\Alberto\Desktop\Disaggregation MATLAB\PRT' ;
-addpath(genpath(prtDir))
-dataDir = 'C:\Users\Alberto\Desktop\Disaggregation MATLAB\guiV2\Results\Lights';
+dataDir = 'C:\Users\Abhishek B\Documents\My Documents\My Duke Documents\Coursework\Energy 596 - Bass Connections in Energy\MATLAB Disagggregation Models\HMM_MATLAB_Model\WattsUpData\Results\Charger';
 
 matFiles = prtUtilSubDir(dataDir,'*.mat');
 
@@ -17,7 +15,6 @@ for iFile = 1:length(matFiles)
 end
 
 [classNames,~,classInds] = unique({allData.item}');
-
 ds = prtDataSetTimeSeries({allData.power}',classInds,'classNames',classNames);
 ds = ds.retainObservations(cellfun(@length,ds.data)>0);
 
